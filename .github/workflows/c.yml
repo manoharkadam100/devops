@@ -1,0 +1,14 @@
+name: first_pipeline
+on: push
+jobs:
+  build: 
+    runs-on: self-hosted
+    steps: 
+      - name: step1
+        run: |
+          echo "Hello, Commit happened successfully"
+      - name: step2
+        uses: actions/setup-java@v4.4.0
+        with:
+           distribution: 'temurin' # See 'Supported distributions' for available options
+           java-version: '21'
