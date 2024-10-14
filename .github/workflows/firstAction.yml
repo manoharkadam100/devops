@@ -2,7 +2,7 @@ name: first_pipeline
 on: push
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: step1
         run: echo "Hello, Commit happened successfully"
@@ -21,7 +21,7 @@ jobs:
           id  
           
   test1:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: build
     steps:
       - name: step1
@@ -39,7 +39,7 @@ jobs:
           id
           
   test2:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: build
     steps:
       - name: step1
@@ -49,7 +49,7 @@ jobs:
           echo "test2 step2"
 
   deploy:      
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [test1, test2]
     steps:
       - name: step1
@@ -67,7 +67,7 @@ jobs:
           id
           
   notify:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: deploy
     if: ${{ always() }}  # Corrected this line
     steps:
