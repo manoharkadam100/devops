@@ -10,7 +10,7 @@ jobs:
         run: echo "step2"
       - name: step3
         run: |
-          ec "hello from step 3"
+          echo "hello from step 3"
           continue
           hostname
           pwd
