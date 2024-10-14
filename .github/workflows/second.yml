@@ -1,5 +1,8 @@
 name: second_pipeline
-on: pull_request
+on: 
+  pull_request:
+    branches:
+      - main
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -26,7 +29,7 @@ jobs:
           sleep 30
       - name: step3
         run: |
-          echo "hello from job 2step 3"
+          echo "hello from job 2 step 3"
           sleep 20
           hostname
           pwd
