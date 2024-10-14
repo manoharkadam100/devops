@@ -13,6 +13,7 @@ jobs:
           echo "hello from step 3"
           hostname
           pwd
+          sleep 30
           id  
   job2:
     runs-on: ubuntu-latest
