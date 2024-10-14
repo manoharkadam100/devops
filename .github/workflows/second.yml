@@ -1,12 +1,14 @@
 name: second_pipeline
 on: 
-  pull_request:
-    branches:
-      - main
-  push:
-    branches:
-      - main
-      - test
+  #pull_request:
+   # branches:
+    #  - main
+  #push:
+   # branches:
+    #  - main
+     # - test
+  schedule:
+  - cron: '* * * * *'
   workflow_dispatch:
 jobs:
   job1:
